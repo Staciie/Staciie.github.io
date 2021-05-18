@@ -1,0 +1,30 @@
+body {
+    background-image: url(../back_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p {
+    font-weight: 600;
+    line-height: 2;
+    font-size: 1em;
+}
+
+.p1 {
+    color: #23dfa2;
+}
+
+.p2 { 
+    color: aquamarine;
+}
+
+.p3 {
+    color: rgb(255, 0, 200);
+}
+
+.p4 {
+    color: hsl(283, 100%, 50%);
+}
+
+.p5 {
+    color: rgba(142, 93, 162, 0.5)
+}

@@ -1,0 +1,23 @@
+.div1 {
+    opacity: 0.5;
+}
+
+.div2 {
+    background-color: rgba(255, 199, 168, 0.5)
+}
+
+.p1 {
+    color: #5d67a2;
+}
+
+.p2 {
+    color: rgb(93, 103, 162);
+}
+
+.p3 {
+    color: hsl(231, 27%, 50%);
+}
+
+.p4 {
+    color: CornflowerBlue;
+}

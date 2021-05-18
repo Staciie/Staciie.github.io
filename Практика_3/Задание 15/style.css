@@ -1,0 +1,10 @@
+div {
+    width: 300px;
+    height: 200px;
+    background-color: #111;
+    background-image: url(../w3c.png);
+    background-repeat: round;
+    background-size: 25%;
+}
+
+
