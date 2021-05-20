@@ -1,0 +1,29 @@
+body {
+    margin: 20px 15%;
+}
+
+div {
+    border: 1px solid black;
+    display: inline-block;
+    width: 100px;
+}
+
+.first {
+    float: right;
+}
+
+.third {
+    float: right;
+}
+
+.fourth {
+    float: left;
+}
+
+.fifth {
+    float: right;
+}
+
+.sixth {
+    float: left;
+}

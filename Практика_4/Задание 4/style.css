@@ -1,0 +1,25 @@
+.container{ 
+    background-color: red;
+}
+
+.elem {
+    width: 30%;
+}
+
+.red {
+    background-color: red;
+}
+
+.first {
+    float: left;
+}
+
+.second {
+    float: right;
+}
+
+.third {
+    margin: 0 30%;
+    background-color: #fff;
+}
+

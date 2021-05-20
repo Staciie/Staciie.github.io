@@ -1,0 +1,19 @@
+
+div {
+    line-height: 2;
+    width: calc(25%);
+    box-sizing: border-box;
+    border: 2px solid black;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.small {
+    width: 10%;
+}
+ 
+.first {
+    margin-left: 30%;
+}

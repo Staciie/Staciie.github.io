@@ -1,0 +1,16 @@
+li {
+    list-style-type: none;
+}
+
+ul {
+    width: 30%;
+}
+
+.sublist {
+    display: none;
+    background-color: red;
+}
+
+.second:hover .sublist{
+    display: block;
+}

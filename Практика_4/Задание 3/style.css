@@ -1,0 +1,43 @@
+body {
+    margin: 10px 100px;
+}
+
+div {
+    color: #fff;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.red {
+    width: 20%;
+}
+
+.green {
+    width: 80%;
+}
+
+.black {
+    width: 80%;
+}
+
+.light_blue {
+    width: 30%;
+}
+
+.yellow {
+    width: 40%;
+}
+
+.blue {
+    width: 20%;
+}
+
+.purple {
+    width: 30%;
+}
