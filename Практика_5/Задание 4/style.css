@@ -1,0 +1,37 @@
+.container {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 40%;
+    height: 20px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.first {
+    order: 2;
+}
+
+.second {
+    order: 5;
+}
+
+.third {
+    order: 4;
+}
+
+.fourth {
+    order: 3;
+}
+
+.fifth {
+    order: 1;
+    margin-right: 40%;
+}
