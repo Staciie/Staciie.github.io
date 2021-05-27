@@ -24,27 +24,33 @@
 </head>
 <body>
     <header id='top'>
-        <div class="header_top">
-            <a href="#" class="header_city_link"><img src="../img/header_icon.png" alt="map icon" class="header_icon">Киев</a>
-            <ul class="header_list">
-                <li class="header_li list-item_top"><a href='#'>Контакты</a></li>
-                <li class="header_li list-item_top"><a href='#'>Доставка</a></li>
-                <li class="header_li list-item_top"><a href='#'>Личный кабинет</a></li>
-            </ul>
-            <a href="page4_cart.html">
-                <img src="../img/header_basket.png" alt="basket icon">
-            </a>
-        </div>
-        <div class="header_bottom">
-            <a href="../index.html" class="header_logo">Black Dress</a>
-            <ul class="header_list header_list_bottom">
-                <li class="header_li list_item_bottom"><a href='#'>Одежда</a></li>
-                <li class="header_li list_item_bottom"><a href='#'>Обувь</a></li>
-                <li class="header_li list_item_bottom"><a href='#'>Аксессуары</a></li>
-                <li class="header_li list_item_bottom"><a href='#'>Sale</a></li>
-            </ul>
-        </div>
-    </header>
+    <div class="header_top">
+      <a href="#" class="header_city_link"><img src="../img/header_icon.png" alt="map icon" class="header_icon">Киев</a>
+      <ul class="header_list header_list_top">
+        <li class="header_li list-item_top"><a href='#'>Контакты</a></li>
+        <li class="header_li list-item_top"><a href='#'>Доставка</a></li>
+        <li class="header_li list-item_top"><a href='#'>Личный кабинет</a></li>
+      </ul>
+      <a href="page4_cart.html">
+        <img src="../img/header_basket.png" alt="basket icon">
+      </a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a href="#" class="header_logo navbar-brand">Black Dress</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="header_bottom collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="header_list header_list_bottom navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="header_li list_item_bottom nav-item active"><a href='#' class='nav-item'>Одежда</a></li>
+          <li class="header_li list_item_bottom nav-item"><a href='#' class='nav-item'>Обувь</a></li>
+          <li class="header_li list_item_bottom nav-item"><a href='#' class='nav-item'>Аксессуары</a></li>
+          <li class="header_li list_item_bottom nav-item"><a href='#' class='nav-item'>Sale</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
  
     <div class="container_main cont_cart section">
         <div class="cart_header">
@@ -83,31 +89,39 @@
      </div> 
     </div>
     <footer>
-        <div class='footer_container'>
-            <div class="footer_top">
-                <a href="#top" class="header_logo">Black Dress</a>
-                <ul class="footer_list footer_left">
-                    <li><a href="#">Подарочная карта</a></li>
-                    <li><a href="#">Отзывы о товарах</a></li>
-                    <li><a href="#">Политика конфиденциальности</a></li>
-                </ul>
-                <ul class="footer_list footer_right">
-                    <li><a href="#">Доставка</a></li>
-                    <li><a href="#">Оплата</a></li>
-                    <li><a href="#">Возврат товара</a></li>
-                    <li><a href="#">О компании</a></li>
-                </ul>
-            </div>
-            <div class="footer_bottom">
-                <p class="copyright">© Black dress, 2021</p>
-                <div class="socials">
-                    <a href="#"><img src="../img/facebook_icon.png" alt="Facebook icon"></a>
-                    <a href="#"><img src="../img/gmail_icon.png" alt="Gmail icon"></a>
-                    <a href="#"><img src="../img/instagram_icon.png" alt="Instagram icon"></a>
-                    <a href="#"><img src="../img/telegram_icon.png" alt="Telegram icon"></a>
-                </div>
-            </div>
+    <div class='footer_container'>
+      <div class="footer_top">
+        <a href="#top" class="header_logo">Black Dress</a>
+        <img src="../img/double-down.png" alt="Dropdown" class="footer_toggle">
+        <ul class="footer_list footer_left">
+          <li><a href="#">Подарочная карта</a></li>
+          <li><a href="#">Отзывы о товарах</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+        </ul>
+        <ul class="footer_list footer_right">
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Возврат товара</a></li>
+          <li><a href="#">О компании</a></li>
+        </ul>
+      </div>
+      <div class="footer_bottom">
+        <p class="copyright">© Black dress, 2021</p>
+        <div class="socials">
+          <a href="#"><img src="../img/facebook_icon.png" alt="Facebook icon"></a>
+          <a href="#"><img src="../img/gmail_icon.png" alt="Gmail icon"></a>
+          <a href="#"><img src="../img/instagram_icon.png" alt="Instagram icon"></a>
+          <a href="#"><img src="../img/telegram_icon.png" alt="Telegram icon"></a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
+  <!-- JQuery -->
+  <script src="../scripts/jquery-3.4.1.min.js"></script>
+
+  <!-- Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  </script>
 </body>
 </html>
