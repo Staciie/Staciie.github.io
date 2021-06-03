@@ -479,8 +479,104 @@ function getNums(A, B) {
 
 // Задание №36. Даны три числа. Найти наименьшее из них.
 
+/*
 function getSmallerNum(num1, num2, num3) {
+    let smaller = num1;
+    if (smaller > num2) {
+        smaller = num2;
+    };
 
+    if (smaller > num3) {
+        smaller = num3;
+    };
+
+    return smaller;
 }
 
-console.log(getSmallerNum)
+console.log(getSmallerNum(5, -3, -2));
+*/
+
+// Задание №37. Даны три числа. Найти среднее из них (то есть число, расположенное между наименьшим и наибольшим).
+
+/*
+function getMiddle(num1, num2, num3) {
+    if (num1 == num2 || num1 == num3 || num2 == num3) {
+        return "Невозможно определить";
+    } else if (num1 < num2 && num1 > num3 || num1 < num3 && num1 > num2) {
+        return num1;
+    } else if (num1 < num2 && num2 < num3 || num3 < num2 && num2 < num1) {
+        return num2;
+    } else {
+        num3;
+    }
+};
+
+console.log(getMiddle(-2, 7,-10))
+*/
+
+//Задание №38. Даны три числа. Вывести вначале наименьшее, а затем наибольшее из данных чисел
+
+/*
+function getNum(num1, num2, num3) {
+    let smaller, bigger;
+
+    if (num1 < num2 && num1 < num3) {
+        smaller = num1;
+    } else if (num2 < num1 && num2 < num3) {
+        smaller = num2;
+    } else {
+        smaller = num3;
+    };
+
+    if (num1 > num2 && num1 > num3) {
+        bigger = num1;
+    } else if (num2 > num1 && num2 > num3) {
+        bigger = num2;
+    } else {
+        bigger = num3;
+    };
+
+    return `${smaller}, ${bigger}`;
+}
+
+console.log(getNum(4, 2, 8))
+*/
+
+//Задание №39. Даны три числа. Найти сумму двух наибольших из них.
+
+/*
+function getNum(num1, num2, num3) {
+    let smaller;
+
+    if (num1 < num2 && num1 < num3) {
+        smaller = num1;
+    } else if (num2 < num1 && num2 < num3) {
+        smaller = num2;
+    } else {
+        smaller = num3;
+    };
+
+    let summ = num1 + num2 + num3 - smaller;
+    return `${summ}`;
+}
+
+console.log(getNum(4, 2, -8))
+*/
+
+// Задание №40. Даны три целых числа, одно из которых отлично от двух других, равных между собой. Определить порядковый номер числа, отличного от остальных.
+
+/*
+function getNum(num1, num2, num3) {
+    if (num1 == num2 && num2 == num3) {
+        return "Невозможно определить";
+    } else if (num1 == num2) {
+        return 3;
+    } else if (num2 == num3) {
+        return 1;
+    } else {
+        return 2;
+    }
+};
+
+console.log(getNum(8,2,8))
+*/
