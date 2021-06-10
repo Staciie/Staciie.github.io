@@ -70,17 +70,50 @@ document.querySelector('#task_7').onclick = () => {
         let innerLis = li.querySelectorAll('li').length;
         if (!innerLis) continue;
 
-        li.firstChild.data += `[${innerLis}]` ;
+        li.firstChild.data += `[${innerLis}]`;
     }
 };
 
 // Задание No8. Создайте календарь в виде таблицы
 
 document.querySelector('#task_8').onclick = () => {
-    let cont = document.querySelector('.task_box_8');
-    let table = document.createElement('table');
-    cont.append(table);
-    table.append()
+
+    function createCalendar(elem, year, month) {
+        let table = "<table><tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr><tr>";
+
+        mon = month - 1;
+        let date = new Date(year, mon);
+        let day = date.getDay();
+
+        if (day === 0) {
+            day = 7;
+        }
+
+        for (i = 1; i < day; i++) {
+            table += "<td></td>";
+        };
+
+        while (date.getMonth() == mon) {
+            table += '<td>' + date.getDate() + '</td>';
+            if (date.getDay() % 7 == 0) { // вс, последний день - перевод строки
+                table += '</tr><tr>';
+            }
+            date.setDate(date.getDate() + 1);
+        };
+
+        if (date.getDay() != 1) {
+            for (i = date.getDay(); i <= 7; i++) {
+                table += "<td></td>"
+            }
+        };
+
+        table += "</tr></table>"
+        elem.innerHTML = table;
+
+    }
+
+    let cal = document.querySelector('#calendar');
+    createCalendar(cal, 2012, 9);
 };
 
 // Задание No9. Вставьте HTML в список
