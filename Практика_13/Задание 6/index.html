@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Practice 13</title>
+    <style>
+        .closed {
+            display: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+   <p><span class='first'>▶</span> <span class='closed second'>▼ </span> Сладости (нажми меня)!</p> 
+    <ul class='closed'>
+        <li>Пирожное</li>
+        <li>Пончик</li>
+        <li>Мёд</li>
+    </ul>
+
+    <script>
+        document.querySelector('p').onclick = function () {
+            console.log('ok')
+            document.querySelector('.first').classList.toggle('closed')
+            document.querySelector('.second').classList.toggle('closed')
+            document.querySelector('ul').classList.toggle('closed')
+        }
+    </script>
+</body>
+
+</html>

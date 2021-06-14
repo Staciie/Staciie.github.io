@@ -1,0 +1,60 @@
+
+.buttons_cont {
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+    padding: 4px;
+    min-width: 360px;
+    border-radius: 5px;
+    background-color: #9c89b8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item {
+    background-color: #fff1e6;
+    color: #231942;
+    padding: 25px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.operator {
+    background-color: #c5dedd;
+}
+.value_field {
+    background-color: #fff;
+    grid-column: 1/-1;
+    padding: 0 0;
+    color: #231942;
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-size: 32px;
+    line-height: 60px;
+    outline: none;
+    text-align: right;
+}
+.clean{
+    grid-column: 1/3;
+    background-color: #fad2e1;
+}
+
+.num-0 {
+    grid-column: 1/3;
+}
+.back {
+    grid-column: 3/-1;
+}
+
+.equel {
+    grid-column: 4;
+    /* grid-row: 6/8; */
+    background-color: #fad2e1;
+}

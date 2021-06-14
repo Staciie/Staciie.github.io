@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Practice 13</title>
+    <style>
+        #field {
+            width: 200px;
+            height: 150px;
+            border: 10px solid black;
+            background-color: #00FF00;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body style="height:2000px">
+    Нажмите на поле для перемещения мяча.
+    <br> Мяч не должен выходить за границы поля.
+    <div id="field">
+        <img src="https://ru.js.cx/clipart/ball.svg" id="ball"> . . . . . ...................................................................... ....................................................... ................................... ............
+    </div>
+
+    <script>
+        document.querySelector('#field').addEventListener('click', function(e) {
+            let field = document.querySelector('#field')
+            let coords = this.getBoundingClientRect();
+            let clickX = e.clientX;
+            let clickY = e.clientY;
+            let ball = document.querySelector('#ball');
+
+            console.log(clickX, clickY)
+            let left  =  clickX - coords.left - field.clientLeft - ball.offsetWidth/2;
+            let top = clickY - coords.top - field.clientTop - ball.offsetHeight/2;
+
+            console.log(ball.style.top)
+            if (top < 0) {
+                top = 0;
+            }
+
+            if (left < 0) {
+                left = 0;
+            }
+
+            if (left + ball.clientWidth > field.clientWidth) {
+                left = field.clientWidth - ball.clientWidth;
+            }
+
+            if (top + ball.clientHeight > field.clientHeight) {
+                top = field.clientHeight - ball.clientHeight;
+            }
+
+            ball.style.top = top +'px';
+            ball.style.left = left + 'px';
+        })
+    </script>
+</body>
+
+</html>

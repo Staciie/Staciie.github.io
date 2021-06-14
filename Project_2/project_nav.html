@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        body {
+            margin:0;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7d1cd;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            margin: 4px;
+            text-decoration: none;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 20px;
+            border: 4px solid #feeafa;
+            color: #735d78;
+            font-size: 23px;
+            transition: .3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a:hover {
+            background-color: #e8c2ca;
+            font-size: 26px;
+        }
+        a:focus {
+            background-color: #e8c2ca;
+            font-size: 26px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="Millionaire/index.html" tabindex="1" focused>Викторина</a>
+        <a href="Calculator/index.html" tabindex="2">Калькулятор</a>
+        <a href="Randomizer/index.html" tabindex="3">Рандомайзер</a>
+    </div>
+   
+</body>
+</html>
