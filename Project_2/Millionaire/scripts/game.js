@@ -1,3 +1,4 @@
+// Get elements
 const chooseBtn = document.querySelector('#check_btn');
 const modal = document.querySelector('.modal');
 const answersList = document.querySelector('.answers_list');
@@ -11,22 +12,22 @@ const varD = document.querySelector('#varD');
 const fifty = document.querySelector('.fifty_fifty');
 const phone = document.querySelector('.phone_friend');
 
+// Set variables 
 let userAnswer = [];
 let currCorrect;
 let lastQuestions = [];
 let currSum = 0;
 let questionNum = 0;
 let winningSum = 0;
+let opacity = [];
 
 window.onload = () => {
   renderQuestion()
 };
 
-
-let opacity = [];
+// 50/50
 
 function lifeline_fifty() {
-
   let variants = ['A', 'B', 'C', 'D'];
   let disable = new Set();
   while (disable.size != 2) {
@@ -44,10 +45,9 @@ function lifeline_fifty() {
   fifty.style.opacity = '.5'
 };
 
-fifty.onclick = lifeline_fifty;
+// Звонок другу
 
 function lifeline_phone() {
-
   let varLetters = ['A', 'B', 'C', 'D']
   let variants = [document.querySelector(`#varA`), document.querySelector(`#varB`), document.querySelector(`#varC`), document.querySelector(`#varD`)]
   if (opacity.length !== 0) {
@@ -58,7 +58,6 @@ function lifeline_phone() {
     })
   }
   let num = Math.floor(Math.random() * variants.length);
-
   let friend_variant = variants[num].innerHTML;
 
   showModal(`Ваш друг считает, что правильный ответ - ${friend_variant}`, 'Выбрать этот ответ', "Вернуться к выбору");
@@ -71,17 +70,21 @@ function lifeline_phone() {
   phone.style.opacity = '.5';
 }
 
-phone.onclick = lifeline_phone;
+// Преобразовать JSON 
 
 function jsonDecode(json) {
   let arr = JSON.parse(json);
   return arr;
 }
 
+// Рандомайзер для выбора вопроса
+
 function randomizer(arr) {
   let len = arr.length;
   return Math.floor(Math.random() * len);
 }
+
+// Вывести новый вопрос
 
 function addQuestion(arr) {
   let newArr = jsonDecode(arr);
@@ -100,18 +103,7 @@ function addQuestion(arr) {
 }
 
 
-
-answersList.addEventListener("change", function (event) {
-  chooseBtn.disabled = false;
-  userAnswer.push(event.target.id);
-
-  if (questionNum % 4 === 0) {
-    setTimeout(showModal, 500, 'Вы уверены?', "Да", "Нет");
-
-    modal.querySelector('button').onclick = chooseClick;
-    modal.querySelector('#modal_close_btn').onclick = hideModal;
-  }
-})
+// Обновить интерфейс (убрать отмеченный вариант, скрытый вариант)
 
 function removeChecked() {
   let array = Array.from(document.querySelectorAll('.radio_input'));
@@ -123,12 +115,14 @@ function removeChecked() {
   arraySpan.forEach(elem => elem.style.opacity = '1')
 }
 
+// Увеличить сумму выигрыша
 
 function changePrize(num) {
   const sums = [0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000];
   prizeSum.innerHTML = sums[num];
 }
 
+// проверить ответ
 
 function checkAnswer() {
   if (currCorrect === userAnswer[userAnswer.length - 1]) {
@@ -138,23 +132,7 @@ function checkAnswer() {
   }
 };
 
-
-chooseBtn.addEventListener('click', function () {
-  if (questionNum < 15) {
-    chooseClick()
-  } else {
-    if (checkAnswer()) {
-      ++currSum;
-      changePrize(currSum)
-      showModal(`${prizeSum.innerHTML} Ваши!`, 'Завершить');
-      modal.querySelector('#modal_btn').onclick = () => {
-        sessionStorage.setItem('prizeSum', JSON.stringify(prizeSum.innerHTML));
-        sessionStorage.setItem('action', JSON.stringify(3));
-        window.location.replace('final.html');
-      }
-    }
-  }
-})
+// Нажатие кнопки "Ответить" до 15 вопроса
 
 function chooseClick() {
   if (checkAnswer()) {
@@ -186,6 +164,7 @@ function chooseClick() {
   }
 }
 
+// Вывести модальное окно
 
 function showModal(text, btn, btn2) {
   document.querySelector('.opacity').style.opacity = '0.4';
@@ -199,12 +178,14 @@ function showModal(text, btn, btn2) {
 
 }
 
+// Спрятать модальное окно
+
 function hideModal() {
   modal.classList.remove('display_modal');
   document.querySelector('.opacity').style.opacity = '1';
 }
 
-
+// Обработать номер вопроса
 function renderQuestion() {
   questionNum++;
   if (questionNum <= 5) {
@@ -227,6 +208,39 @@ function renderQuestion() {
     addQuestion(THIRD_LEVEL_QUESTIONS);
   }
 }
+
+// События
+
+fifty.onclick = lifeline_fifty;
+phone.onclick = lifeline_phone;
+
+answersList.addEventListener("change", function (event) {
+  chooseBtn.disabled = false;
+  userAnswer.push(event.target.id);
+  if (questionNum % 4 === 0) {
+    setTimeout(showModal, 500, 'Вы уверены?', "Да", "Нет");
+    modal.querySelector('button').onclick = chooseClick;
+    modal.querySelector('#modal_close_btn').onclick = hideModal;
+  }
+})
+
+chooseBtn.addEventListener('click', function () {
+  if (questionNum < 15) {
+    chooseClick()
+  } else {
+    if (checkAnswer()) {
+      ++currSum;
+      changePrize(currSum)
+      showModal(`${prizeSum.innerHTML} Ваши!`, 'Завершить');
+      modal.querySelector('#modal_btn').onclick = () => {
+        sessionStorage.setItem('prizeSum', JSON.stringify(prizeSum.innerHTML));
+        sessionStorage.setItem('action', JSON.stringify(3));
+        window.location.replace('final.html');
+      }
+    }
+  }
+})
+
 
 
 
