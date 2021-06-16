@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            background-color: #72727265;
+            display: none;
+        }
+        .cont {
+            z-index: 4;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #83e1fdbd;
+            border: 2px solid #047272cc;
+            border-radius: 5px;
+            width: 250px;
+            height: 200px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        input[type='text'] {
+            width: 90%;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 tabindex="-1">Кликните на кнопку ниже</h1>
+    <button id="button" tabindex="-1">Кликните, чтобы увидеть форму</button>
+    <div class="cover"></div>
+    <div class="cont">
+        <form action="">
+            <label for="text" name='label'></label>
+            <input type="text" id='text' name='text' tabindex='1' autofocus>
+            <input type="submit" value='Ok' tabindex='2'>
+            <input type="button" value='Cancel' tabindex='3'>
+        </form>
+    </div>
+
+    <script>
+        function showPrompt(html, callback) {
+            document.querySelector('.cover').style.display = 'block';
+            let form = document.querySelector('form');
+            let label = form.querySelector('label').innerHTML = html;
+            document.querySelector('.cont').style.display = 'flex';
+
+            form.onsubmit = function() {
+                if (form.text.value == '') {
+                    return;
+                }
+                return callback(form.text.value);
+            }
+
+            document.querySelector('input[type="button"]').onclick = function() {
+                returnNull();
+            }
+
+            document.onkeydown = function(e) {
+                if (e.key == 'Escape') {
+                    returnNull();
+                }
+            }
+            function returnNull() {
+                callback(null);
+                document.querySelector('.cover').style.display = 'none';
+                document.querySelector('.cont').style.display = 'none';
+                return;
+            }
+        }
+
+
+
+        document.querySelector('#button').addEventListener('click', function() {
+            showPrompt("Введите что-нибудь<br>...умное :)", function (value) {
+            alert(`Вы ввели: ${value}`);
+        })});
+    </script>
+</body>
+
+</html>
